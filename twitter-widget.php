@@ -3,7 +3,7 @@
 Plugin Name: Twitter Widget
 Plugin URI: http://seanys.com/2007/10/12/twitter-wordpress-widget/
 Description: Adds a sidebar widget to display Twitter updates (uses the Javascript <a href="http://twitter.com/badges/which_badge">Twitter 'badge'</a>)
-Version: 1.0.1
+Version: 1.0.2
 Author: Sean Spalding
 Author URI: http://seanys.com/
 License: GPL
@@ -39,7 +39,7 @@ function widget_Twidget_init() {
               .$before_title.$title.$after_title;
 		echo '<ul id="twitter_update_list"></ul></div>
 		      <script type="text/javascript" src="http://twitter.com/javascripts/blogger.js"></script>';
-		echo '<script text="text/javascript" src="http://twitter.com/statuses/user_timeline/'.$account.'.json?callback=twitterCallback2&count='.$show.'"></script>';
+		echo '<script type="text/javascript" src="http://twitter.com/statuses/user_timeline/'.$account.'.json?callback=twitterCallback2&amp;count='.$show.'"></script>';
 
 
 		// echo widget closing tag

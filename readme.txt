@@ -4,7 +4,7 @@ Donate link: http://www.greenpeace.org/
 Tags: twitter, widget
 Requires at least: 2.2
 Tested up to: 2.2.3
-Stable tag: 1.0.1
+Stable tag: 1.0.2
 
 == Description == 
 
@@ -52,3 +52,5 @@ Author URI: http://seanys.com/<br />
 1.0 Initial release
 
 1.0.1 Documentation update
+
+1.0.2 Fixed validation and typo
