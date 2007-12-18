@@ -23,12 +23,13 @@ None. It's just text, styled as you desire.
 
 == Legal ==
 
+License: GPL
+
 This software comes without any warranty, express or otherwise, and if it
 breaks your blog or results in your cat being shaved, it's not my fault.
 
 == Other == 
 
-Plugin URI: http://seanys.com/2007/10/12/twitter-wordpress-widget/
-Author: Sean Spalding
-Author URI: http://seanys.com/
-License: GPL
+Plugin URI: http://seanys.com/2007/10/12/twitter-wordpress-widget/<br />
+Author: Sean Spalding<br />
+Author URI: http://seanys.com/<br />
