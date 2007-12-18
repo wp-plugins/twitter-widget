@@ -16,6 +16,7 @@ Adds a sidebar widget to display Twitter updates (using the Javascript
 Copy the '**twitter-widget.php**' file to your WordPress 
 '*/wp-content/plugins/widgets*' folder.
 
+1. Activate the '*Twitter*' plugin in your WordPress admin '*Plugins*'
 1. Go to '*Presentation / Widgets*' in your WordPress admin area.
 1. Drag the '*Twitter*' widget to your sidebar.
 1. Configure the options:
