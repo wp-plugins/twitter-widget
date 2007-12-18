@@ -1,10 +1,10 @@
 <?php
 /*
-Plugin Name: Twidget
+Plugin Name: Twitter Widget
 Plugin URI: http://seanys.com/2007/10/12/twitter-wordpress-widget/
 Description: Adds a sidebar widget to display Twitter updates (uses the Javascript <a href="http://twitter.com/badges/which_badge">Twitter 'badge'</a>)
-Author: Sean Spalding
 Version: 1.0
+Author: Sean Spalding
 Author URI: http://seanys.com/
 License: GPL
 
