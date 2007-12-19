@@ -3,7 +3,7 @@
 Plugin Name: Twitter Widget
 Plugin URI: http://seanys.com/2007/10/12/twitter-wordpress-widget/
 Description: Adds a sidebar widget to display Twitter updates (uses the Javascript <a href="http://twitter.com/badges/which_badge">Twitter 'badge'</a>)
-Version: 1.0.2
+Version: 1.1
 Author: Sean Spalding
 Author URI: http://seanys.com/
 License: GPL
@@ -27,20 +27,57 @@ function widget_Twidget_init() {
 
 		// These are our own options
 		$options = get_option('widget_Twidget');
+		$badge = $options['badge'];  // Twitter badge type
 		$account = $options['account'];  // Your Twitter account name
 		$title = $options['title'];  // Title in sidebar for widget
 		$show = $options['show'];  // # of Updates to show
 
         // Output
 		echo $before_widget ;
-
-		// start
-		echo '<div id="twitter_div">'
-              .$before_title.$title.$after_title;
-		echo '<ul id="twitter_update_list"></ul></div>
-		      <script type="text/javascript" src="http://twitter.com/javascripts/blogger.js"></script>';
-		echo '<script type="text/javascript" src="http://twitter.com/statuses/user_timeline/'.$account.'.json?callback=twitterCallback2&amp;count='.$show.'"></script>';
-
+		
+		switch ($badge){
+			// start display
+			case 0:
+				// javascript text
+				echo '<div id="twitter_div">'
+									.$before_title.$title.$after_title;
+				echo '<ul id="twitter_update_list"></ul></div>
+							<script type="text/javascript" src="http://twitter.com/javascripts/blogger.js"></script>';
+				echo '<script type="text/javascript" src="http://twitter.com/statuses/user_timeline/'.$account.'.json?callback=twitterCallback2&amp;count='.$show.'"></script>';
+				break;
+			case 1:
+				// flash, with friends
+				echo '<div style="width:200px;text-align:center">
+								<embed src="http://static.twitter.com/flash/twitter_timeline_badge.swf" 
+											 flashvars="user_id='.$account.'&color1=0xFFFFCE&color2=0xFCE7CC&textColor1=0x4A396D&textColor2=0xBA0909&backgroundColor=0x92E2E5&textSize=10" 
+											 width="200" height="400" align="middle" 
+											 quality="high" 
+											 name="twitter_timeline_badge" 
+											 type="application/x-shockwave-flash" 
+											 allowScriptAccess="always" 
+											 type="application/x-shockwave-flash" 
+											 pluginspage="http://www.adobe.com/go/getflashplayer">
+								</embed><br />
+								<a style="font-size: 10px; color: #0xBA0909; text-decoration: none" href="http://static.twitter.com/'.$account.'"><img src="http://static.twitter.com/images/twitter_bubble_logo.gif" border="0" /></a>
+							</div>';
+				break;
+			case 2:
+				// flash, just me
+				echo '<div style="width:176px;text-align:center">
+								<embed src="http://twitter.com/flash/twitter_badge.swf"  
+											 flashvars="color1=16594585&type=user&id=9206062"  
+											 quality="high" 
+											 width="176" height="176" 
+											 name="twitter_badge" 
+											 align="middle" 
+											 allowScriptAccess="always" 
+											 wmode="transparent" 
+											 type="application/x-shockwave-flash" 
+											 pluginspage="http://www.macromedia.com/go/getflashplayer" /><br />
+					      <a style="font-size: 10px; color: #FD3699; text-decoration: none" href="http://twitter.com/seanys">follow seanys at http://twitter.com</a>
+							</div>';
+				break;
+		}
 
 		// echo widget closing tag
 		echo $after_widget;
@@ -59,6 +96,7 @@ function widget_Twidget_init() {
 		if ( $_POST['Twitter-submit'] ) {
 
 			// Remember to sanitize and format use input appropriately.
+			$options['badge'] = strip_tags(stripslashes($_POST['Twitter-badge']));
 			$options['account'] = strip_tags(stripslashes($_POST['Twitter-account']));
 			$options['title'] = strip_tags(stripslashes($_POST['Twitter-title']));
 			$options['show'] = strip_tags(stripslashes($_POST['Twitter-show']));
@@ -66,11 +104,20 @@ function widget_Twidget_init() {
 		}
 
 		// Get options for form fields to show
+		$badge = htmlspecialchars($options['badge'], ENT_QUOTES);
 		$account = htmlspecialchars($options['account'], ENT_QUOTES);
 		$title = htmlspecialchars($options['title'], ENT_QUOTES);
 		$show = htmlspecialchars($options['show'], ENT_QUOTES);
 
 		// The form fields
+		echo '<p style="text-align:right;">
+				<label for="Twitter-badge">' . __('Badge:') . '
+				<select style="width: 200px;" id="Twitter-badge" name="Twitter-badge">
+					<option value="0">HTML/JavaScript</option>
+					<option value="1">Flash, with friends</option>
+					<option value="2">Flash, just me</option>
+				</select>
+				</label></p>';
 		echo '<p style="text-align:right;">
 				<label for="Twitter-account">' . __('Account:') . '
 				<input style="width: 200px;" id="Twitter-account" name="Twitter-account" type="text" value="'.$account.'" />
