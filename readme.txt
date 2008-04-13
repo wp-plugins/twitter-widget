@@ -3,7 +3,7 @@ Contributors: seanys
 Donate link: http://www.greenpeace.org/
 Tags: twitter, widget
 Requires at least: 2.2
-Tested up to: 2.2.3
+Tested up to: 2.5
 Stable tag: 1.0.2
 
 == Description == 
@@ -25,10 +25,12 @@ Copy the '**twitter-widget.php**' file to your WordPress
    sidebar, defaults to 'Twitter Updates'
  2. *Show*: the number of Twitters shown, defaults to 5
 
-== Frequently Asked Questions ==
+WordPress 2.5 users
 
-I have one for you... does this work on WP2.3? I'm yet to upgrade my 
-installation and haven't been able to test it. Replies appreciated.
+Beware, if you leave the '**twitter-widget.php**' file in the 'plugins/widgets' 
+folder you will erroneously be prompted to 'upgrade' it on the 'Plugins' 
+admin screen. I recommend moving the '**twitter-widget.php**' file 
+into the 'plugins' folder.
 
 == Screenshots ==
 
