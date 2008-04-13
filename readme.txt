@@ -25,6 +25,12 @@ Copy the '**twitter-widget.php**' file to your WordPress
    sidebar, defaults to 'Twitter Updates'
  2. *Show*: the number of Twitters shown, defaults to 5
 
+WordPress 2.0.x and 2.1.x users
+
+You guys should also be able use this widget if you install the 
+[Widgets Plugin](http://automattic.com/code/widgets/). I tested it
+briefly and it appeared to work.
+
 WordPress 2.5 users
 
 Beware, if you leave the '**twitter-widget.php**' file in the 'plugins/widgets' 
