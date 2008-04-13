@@ -31,6 +31,13 @@ You guys should also be able use this widget if you install the
 [Widgets Plugin](http://automattic.com/code/widgets/). I tested it
 briefly and it appeared to work.
 
+WordPress 2.5 users
+
+Beware, if you leave the '**twitter-widget.php**' file in the 
+'plugins/widgets' folder you will erroneously be prompted to 'upgrade' 
+it on the 'Plugins' admin screen. I recommend moving the 
+'**twitter-widget.php**' file into the 'plugins' folder.
+
 == Frequently Asked Questions ==
 
 I have one for you... does this work on WP2.3? I'm yet to upgrade my 
