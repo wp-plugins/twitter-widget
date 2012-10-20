@@ -7,14 +7,12 @@ Tested up to: 3.4.2
 Stable tag: 1.0.4
 
 == Description == 
-
 Adds a sidebar widget to display Twitter updates (using the Javascript 
 [Twitter 'widgets'](https://twitter.com/settings/widgets)
 
 Sorry guys but *Twitter have discontinued support for 'badges'* and made using this widget WAAAAY more difficult in the process.
 
 == Installation == 
-
 1. Go to [Twitter 'widgets'](https://twitter.com/settings/widgets)
 1. Create a new 'widget' with your desired settings
  2. IMPORTANT: make sure you enter the domain of the site the widget appears on
@@ -43,24 +41,20 @@ admin screen. I recommend moving the '**twitter-widget.php**' file
 into the 'plugins' folder.
 
 == Screenshots ==
-
 1. The options screen.
 
 == Legal ==
-
 License: GPL
 
 This software comes without any warranty, express or otherwise, and if it
 breaks your blog or results in your cat being shaved, it's not my fault.
 
 == Other == 
-
 Plugin URI: http://seanys.com/2007/10/12/twitter-wordpress-widget/<br />
 Author: Sean Spalding<br />
 Author URI: http://seanys.com/<br />
 
 == Version History ==
-
 1.0 Initial release
 
 1.0.1 Documentation update
