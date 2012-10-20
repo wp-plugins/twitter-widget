@@ -5,6 +5,8 @@ Tags: twitter, widget
 Requires at least: 2.2
 Tested up to: 3.4.2
 Stable tag: 1.0.4
+License: GPLv2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 == Description == 
 Adds a sidebar widget to display Twitter updates (using the Javascript 
@@ -44,8 +46,6 @@ into the 'plugins' folder.
 1. The options screen.
 
 == Legal ==
-License: GPL
-
 This software comes without any warranty, express or otherwise, and if it
 breaks your blog or results in your cat being shaved, it's not my fault.
 
