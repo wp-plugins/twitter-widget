@@ -2,8 +2,8 @@
 /*
 Plugin Name: Twitter Widget
 Plugin URI: http://seanys.com/2007/10/12/twitter-wordpress-widget/
-Description: Adds a sidebar widget to display Twitter updates (uses the Javascript <a href="http://twitter.com/badges/which_badge">Twitter 'badge'</a>)
-Version: 1.0.3
+Description: Adds a sidebar widget to display Twitter updates (uses the Javascript <a href="https://twitter.com/settings/widgets">Twitter 'widgets'</a>)
+Version: 1.0.4
 Author: Sean Spalding
 Author URI: http://seanys.com/
 License: GPL
@@ -28,18 +28,17 @@ function widget_Twidget_init() {
 		// These are our own options
 		$options = get_option('widget_Twidget');
 		$account = $options['account'];  // Your Twitter account name
+		$datawidgetid = $options['datawidgetid'];   // Twitter data-widget-id
 		$title = $options['title'];  // Title in sidebar for widget
-		$show = $options['show'];  // # of Updates to show
 
         // Output
 		echo $before_widget ;
 
 		// start
-		echo '<div id="twitter_div">'
+		echo '<a class="twitter-timeline" data-dnt=true href="https://twitter.com/'.$account.'" data-widget-id="'.$datawidgetid.'">'
               .$before_title.$title.$after_title;
-		echo '<ul id="twitter_update_list"></ul></div>
-		      <script type="text/javascript" src="http://twitter.com/javascripts/blogger.js"></script>';
-		echo '<script type="text/javascript" src="http://twitter.com/statuses/user_timeline/'.$account.'.json?callback=twitterCallback2&amp;count='.$show.'"></script>';
+		echo '</a>
+		      <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>';
 
 
 		// echo widget closing tag
@@ -53,22 +52,22 @@ function widget_Twidget_init() {
 		$options = get_option('widget_Twidget');
 		// options exist? if not set defaults
 		if ( !is_array($options) )
-			$options = array('account'=>'seanys', 'title'=>'Twitter Updates', 'show'=>'5');
+			$options = array('account'=>'seanys', 'datawidgetid'=>'259518818584502272', 'title'=>'Twitter Feed');
 
         // form posted?
 		if ( $_POST['Twitter-submit'] ) {
 
 			// Remember to sanitize and format use input appropriately.
 			$options['account'] = strip_tags(stripslashes($_POST['Twitter-account']));
+			$options['datawidgetid'] = strip_tags(stripslashes($_POST['Twitter-datawidgetid']));
 			$options['title'] = strip_tags(stripslashes($_POST['Twitter-title']));
-			$options['show'] = strip_tags(stripslashes($_POST['Twitter-show']));
 			update_option('widget_Twidget', $options);
 		}
 
 		// Get options for form fields to show
 		$account = htmlspecialchars($options['account'], ENT_QUOTES);
+		$datawidgetid = htmlspecialchars($options['datawidgetid'], ENT_QUOTES);
 		$title = htmlspecialchars($options['title'], ENT_QUOTES);
-		$show = htmlspecialchars($options['show'], ENT_QUOTES);
 
 		// The form fields
 		echo '<p style="text-align:right;">
@@ -76,12 +75,12 @@ function widget_Twidget_init() {
 				<input style="width: 200px;" id="Twitter-account" name="Twitter-account" type="text" value="'.$account.'" />
 				</label></p>';
 		echo '<p style="text-align:right;">
-				<label for="Twitter-title">' . __('Title:') . '
-				<input style="width: 200px;" id="Twitter-title" name="Twitter-title" type="text" value="'.$title.'" />
+				<label for="Twitter-datawidgetid">' . __('Data Widget Id:') . '
+				<input style="width: 200px;" id="Twitter-datawidgetid" name="Twitter-datawidgetid" type="text" value="'.$datawidgetid.'" />
 				</label></p>';
 		echo '<p style="text-align:right;">
-				<label for="Twitter-show">' . __('Show:') . '
-				<input style="width: 200px;" id="Twitter-show" name="Twitter-show" type="text" value="'.$show.'" />
+				<label for="Twitter-title">' . __('Title:') . '
+				<input style="width: 200px;" id="Twitter-title" name="Twitter-title" type="text" value="'.$title.'" />
 				</label></p>';
 		echo '<input type="hidden" id="Twitter-submit" name="Twitter-submit" value="1" />';
 	}
