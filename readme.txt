@@ -23,7 +23,7 @@ Make sure you **READ THE INSTRUCTIONS** for this version.
 1. Copy the generated code from the text field labelled "Copy and paste the code into the HTML of your site" and either:
  2. Copy just the data-widget-id *number* from the generated code. Paste the code into Notepad or your favourite text editor and copy the data-widget-id number from there (I know, it's a pain).
   OR
- 2. Copy the number from the URL, e.g. https://twitter.com/settings/widgets/<copy this number here>/edit
+ 2. Copy the number from the URL, e.g. https://twitter.com/settings/widgets/--copy-this-number-here--/edit
 1. "Save changes" on the widget settings page
 1. *Optional* (If you didn't install direct from WordPress.org) Upload the '**twitter-widget.php**' file to your WordPress '*/wp-content/plugins/widgets*' folder.
 1. Activate the '*Twitter*' plugin in your WordPress admin '*Plugins*'
