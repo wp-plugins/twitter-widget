@@ -6,7 +6,7 @@ Description: Adds a sidebar widget to display Twitter updates (uses the Javascri
 Version: 1.0.4
 Author: Sean Spalding
 Author URI: http://seanys.com/
-License: GPL
+License: GPLv2
 
 This software comes without any warranty, express or otherwise, and if it
 breaks your blog or results in your cat being shaved, it's not my fault.
@@ -70,18 +70,20 @@ function widget_Twidget_init() {
 		$title = htmlspecialchars($options['title'], ENT_QUOTES);
 
 		// The form fields
+		echo '<p style="text-align:left;">Create a new <a href="https://twitter.com/settings/widgets">Twitter widget</a>.</p>';
 		echo '<p style="text-align:right;">
 				<label for="Twitter-account">' . __('Account:') . '
 				<input style="width: 200px;" id="Twitter-account" name="Twitter-account" type="text" value="'.$account.'" />
 				</label></p>';
 		echo '<p style="text-align:right;">
-				<label for="Twitter-datawidgetid">' . __('Data Widget Id:') . '
+				<label for="Twitter-datawidgetid">' . __('Data Widget ID:') . '
 				<input style="width: 200px;" id="Twitter-datawidgetid" name="Twitter-datawidgetid" type="text" value="'.$datawidgetid.'" />
 				</label></p>';
 		echo '<p style="text-align:right;">
 				<label for="Twitter-title">' . __('Title:') . '
 				<input style="width: 200px;" id="Twitter-title" name="Twitter-title" type="text" value="'.$title.'" />
 				</label></p>';
+		echo '<p style="text-align:left;">Go to the <a href="https://twitter.com/settings/widgets/'.$datawidgetid.'/edit">Twitter widget settings page</a>.</p>';
 		echo '<input type="hidden" id="Twitter-submit" name="Twitter-submit" value="1" />';
 	}
 
