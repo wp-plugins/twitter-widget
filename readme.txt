@@ -10,16 +10,20 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 == Description == 
 Adds a sidebar widget to display Twitter updates (using the Javascript 
-[Twitter 'widgets'](https://twitter.com/settings/widgets)
+[Twitter 'widgets'](https://twitter.com/settings/widgets))
 
 Sorry guys but *Twitter have discontinued support for 'badges'* and made using this widget WAAAAY more difficult in the process.
+
+Make sure you **READ THE INSTRUCTIONS** for this version.
 
 == Installation == 
 1. Go to [Twitter 'widgets'](https://twitter.com/settings/widgets)
 1. Create a new 'widget' with your desired settings
- 2. IMPORTANT: make sure you enter the domain of the site the widget appears on
-1. Copy the generated code from the window "Copy and paste the code into the HTML of your site."
-1. (If you didn't install direct from WordPress.org) Upload the '**twitter-widget.php**' file to your WordPress '*/wp-content/plugins/widgets*' folder.
+ 2. **IMPORTANT**: make sure you enter the domain of the site the widget appears on
+1. Copy the generated code from the text field labelled "Copy and paste the code into the HTML of your site."
+1. Copy just the data-widget-id *number* from the generated code.
+ 2. **NOTE**: you can't do this on the Twitter settings page. You have to paste the code into Notepad or your favourite text editor and copy the data-widget-id number from there (I know, it's a pain).
+1. *Optional* (If you didn't install direct from WordPress.org) Upload the '**twitter-widget.php**' file to your WordPress '*/wp-content/plugins/widgets*' folder.
 1. Activate the '*Twitter*' plugin in your WordPress admin '*Plugins*'
 1. Go to '*Presentation / Widgets*' in your WordPress admin area.
 1. Drag the '*Twitter*' widget to your sidebar.
